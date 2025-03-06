@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgp0w2t4is2k"]
+[gd_scene load_steps=4 format=3 uid="uid://dgp0w2t4is2k"]
 
 [ext_resource type="Texture2D" uid="uid://b3nhrvi6u6bm2" path="res://UI Elements/MENU/menu.png" id="1_7eagq"]
 [ext_resource type="Script" uid="uid://cn4rgwqd8vgi6" path="res://Scripts/main_menu.gd" id="1_gjgoe"]
 [ext_resource type="Texture2D" uid="uid://d0r6r6igoj2lf" path="res://UI Elements/MENU/Title.png" id="2_asdiq"]
-[ext_resource type="AudioStream" uid="uid://bc6kuakrx26y4" path="res://music_fx_orchestral_gloomy_main_menu_introduction.wav" id="4_thvqa"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -51,9 +50,6 @@ text = "Quit"
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(322, 179)
 texture = ExtResource("2_asdiq")
-
-[node name="MusicFxOrchestralGloomyMainMenuIntroduction" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_thvqa")
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://1fptv84uitex"]
+[gd_scene load_steps=30 format=4 uid="uid://1fptv84uitex"]
 
 [ext_resource type="Texture2D" uid="uid://bhdd01rejit3r" path="res://LevelSprites/Sidescroller Shooter - Central City/Background/Base Color.png" id="1_nnvus"]
 [ext_resource type="Texture2D" uid="uid://durv7dod33trr" path="res://LevelSprites/Sidescroller Shooter - Central City/Background/Frontal Fog.png" id="2_3eu35"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bero5jg0ohtxw" path="res://score_ui.tscn" id="8_c12fl"]
 [ext_resource type="PackedScene" uid="uid://bnftu787mw1ku" path="res://Health.tscn" id="11_w0kyx"]
 [ext_resource type="Script" uid="uid://cglttkfr3hho8" path="res://Scripts/camera_2d.gd" id="12_ipw23"]
-[ext_resource type="PackedScene" uid="uid://bg3xsjq6amfmb" path="res://enemy_1.tscn" id="13_0m3fb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jlprf"]
 texture = ExtResource("4_ryo61")
@@ -1380,14 +1379,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 metadata/_edit_use_anchors_ = true
 metadata/_edit_lock_ = true
-
-[node name="enemy_1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_0m3fb")]
-position = Vector2(63, 327)
-player = NodePath("../Player")
-
-[node name="enemy_2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("13_0m3fb")]
-position = Vector2(969, 317)
-player = NodePath("../Player")
 
 [node name="Player" parent="." node_paths=PackedStringArray("Health") instance=ExtResource("2_nfl32")]
 position = Vector2(25, 302)
