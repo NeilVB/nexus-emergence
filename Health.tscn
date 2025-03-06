@@ -1,0 +1,131 @@
+[gd_scene load_steps=15 format=3 uid="uid://bnftu787mw1ku"]
+
+[ext_resource type="Script" uid="uid://dtlfuudlmogqh" path="res://Scripts/health.gd" id="1_p6mm4"]
+[ext_resource type="Texture2D" uid="uid://clf1mwwdkd8ex" path="res://HUD/Health.png" id="2_sfoda"]
+[ext_resource type="FontFile" uid="uid://d3b7t2kj53rw6" path="res://UI Elements/Fonts/m5x7.ttf" id="2_xyxfe"]
+[ext_resource type="Texture2D" uid="uid://c6ioy16a6thvr" path="res://HUD/LiquidHealthGreen.png" id="5_ghlos"]
+[ext_resource type="Texture2D" uid="uid://f3xgxn4m1qh6" path="res://HUD/StaminaBar.png" id="6_euenw"]
+[ext_resource type="Texture2D" uid="uid://cxabhi86xjwl" path="res://HUD/StaminaBlack.png" id="6_ko65y"]
+[ext_resource type="Texture2D" uid="uid://dux5kskieox24" path="res://HUD/StaminaProgress.png" id="6_nxuqt"]
+[ext_resource type="Texture2D" uid="uid://i5wwghsfwgog" path="res://HUD/LiquidHealthRed.png" id="6_sx253"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wn1w"]
+bg_color = Color(0.219608, 0.658824, 0.552941, 1)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.186245, 0.310607, 0.312217, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6twiy"]
+bg_color = Color(0.873725, 0, 0.143614, 1)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.184314, 0.309804, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vyad"]
+bg_color = Color(0.219608, 0.658824, 0.552941, 1)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.186245, 0.310607, 0.312217, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ofucx"]
+bg_color = Color(0.142001, 0.782211, 0.317476, 1)
+skew = Vector2(1, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_bottom = 3
+border_color = Color(0.184314, 0.309804, 0.313726, 1)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p27lj"]
+load_path = "res://.godot/imported/LiquidHealthBlack.png-ffdec461d18b505e470eccc29f3e31be.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nw4yn"]
+load_path = "res://.godot/imported/Health.png-2b88d4c5fe85947596dffaff09bdd964.ctex"
+
+[node name="Health" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 198.0
+offset_top = -148.0
+offset_right = 198.0
+offset_bottom = -148.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_p6mm4")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -188.0
+offset_top = 161.0
+offset_right = 248.0
+offset_bottom = 190.0
+scale = Vector2(0.64, 0.64)
+theme_override_styles/background = SubResource("StyleBoxFlat_4wn1w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6twiy")
+value = 60.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -188.0
+offset_top = 161.0
+offset_right = 248.0
+offset_bottom = 188.0
+scale = Vector2(0.64, 0.64)
+theme_override_fonts/font = ExtResource("2_xyxfe")
+theme_override_styles/background = SubResource("StyleBoxFlat_4vyad")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ofucx")
+value = 100.0
+
+[node name="HPBAR2" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -192.0
+offset_top = 154.0
+offset_right = 448.0
+offset_bottom = 514.0
+step = 0.1
+value = 100.0
+texture_under = SubResource("CompressedTexture2D_p27lj")
+texture_over = SubResource("CompressedTexture2D_nw4yn")
+texture_progress = ExtResource("6_sx253")
+
+[node name="HPBAR" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -192.0
+offset_top = 154.0
+offset_right = 448.0
+offset_bottom = 514.0
+step = 0.1
+value = 100.0
+texture_over = ExtResource("2_sfoda")
+texture_progress = ExtResource("5_ghlos")
+
+[node name="StaminaBAR2" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -193.0
+offset_top = 172.0
+offset_right = -33.0
+offset_bottom = 212.0
+value = 100.0
+texture_under = ExtResource("6_ko65y")
+texture_over = ExtResource("6_euenw")
+
+[node name="StaminaBAR" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = -193.0
+offset_top = 172.0
+offset_right = -33.0
+offset_bottom = 212.0
+value = 100.0
+texture_over = ExtResource("6_euenw")
+texture_progress = ExtResource("6_nxuqt")

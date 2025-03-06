@@ -1,0 +1,203 @@
+[gd_scene load_steps=32 format=3 uid="uid://bikiodcnccowl"]
+
+[ext_resource type="Texture2D" uid="uid://bt47c4i31fat6" path="res://LevelSprites/Turret/TurretHead.png" id="1_4vebn"]
+[ext_resource type="Script" uid="uid://cwmuh6j2afqt2" path="res://turret.gd" id="1_5j2yc"]
+[ext_resource type="Texture2D" uid="uid://bvgbt3tnmukvt" path="res://LevelSprites/Turret/TurretBody.png" id="1_pbcgo"]
+[ext_resource type="PackedScene" uid="uid://cutb5l3y3xkdt" path="res://bullet.tscn" id="2_7ktib"]
+[ext_resource type="Texture2D" uid="uid://db04lblbixx0t" path="res://LevelSprites/Turret/Type 1/1.png" id="5_p1i6k"]
+[ext_resource type="Texture2D" uid="uid://cf4imo3ereldy" path="res://LevelSprites/Turret/Type 1/2.png" id="6_quamn"]
+[ext_resource type="Texture2D" uid="uid://b6ip2elpckbe" path="res://LevelSprites/Turret/Type 1/3.png" id="7_3uwh4"]
+[ext_resource type="Texture2D" uid="uid://dljen52noggkk" path="res://LevelSprites/Turret/Type 1/4.png" id="8_vk2jb"]
+[ext_resource type="Texture2D" uid="uid://dewu868u5hh74" path="res://LevelSprites/Turret/Type 1/5.png" id="9_aagpn"]
+[ext_resource type="Texture2D" uid="uid://vrelyoha1r2v" path="res://LevelSprites/Turret/Type 1/6.png" id="10_64ugw"]
+[ext_resource type="Texture2D" uid="uid://csv4b02playsh" path="res://LevelSprites/Turret/Type 1/7.png" id="11_r7kbw"]
+[ext_resource type="Texture2D" uid="uid://npg4ohjnscyy" path="res://LevelSprites/Turret/Type 1/8.png" id="12_8e2s2"]
+[ext_resource type="AudioStream" uid="uid://dr42xqei0vhdw" path="res://SFX/turretdestroy[HM].wav" id="13_dmh2e"]
+[ext_resource type="Texture2D" uid="uid://dus16cnsde7vu" path="res://LevelSprites/Turret/Turret-Shoot.png" id="13_llpyt"]
+[ext_resource type="Texture2D" uid="uid://cqtwuuw58xjv0" path="res://LevelSprites/Turret/Turret-Reload.png" id="14_cgtsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61sdn"]
+size = Vector2(36, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4yea"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xncmk"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxo5r"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn4wx"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2l38"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0qo5"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnvr2"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7txgx"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hquu"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pclyr"]
+atlas = ExtResource("14_cgtsa")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65vxl"]
+atlas = ExtResource("13_llpyt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cbsh"]
+atlas = ExtResource("13_llpyt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hsaf"]
+atlas = ExtResource("13_llpyt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tmjm7"]
+atlas = ExtResource("13_llpyt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o58g5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4vebn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_p1i6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_quamn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3uwh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vk2jb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aagpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_64ugw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r7kbw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_8e2s2")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4yea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xncmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxo5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn4wx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2l38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0qo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnvr2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7txgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hquu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pclyr")
+}],
+"loop": false,
+"name": &"reload",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65vxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cbsh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hsaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tmjm7")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 12.0
+}]
+
+[node name="Turret" type="Node2D"]
+script = ExtResource("1_5j2yc")
+BULLET = ExtResource("2_7ktib")
+
+[node name="BaseSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_pbcgo")
+
+[node name="Hitbox" type="Area2D" parent="BaseSprite"]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BaseSprite/Hitbox"]
+shape = SubResource("RectangleShape2D_61sdn")
+
+[node name="GunSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o58g5")
+animation = &"reload"
+autoplay = "default"
+frame = 9
+frame_progress = 1.0
+
+[node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 0.53
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(483, 0)
+collision_mask = 5
+
+[node name="Turretdestroy[hm]" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_dmh2e")
+
+[connection signal="area_entered" from="BaseSprite/Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="BaseSprite/Hitbox" to="." method="_on_hitbox_body_entered"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]

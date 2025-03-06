@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjtkxm2wr725y"]
+
+[ext_resource type="Texture2D" uid="uid://cj3jxjd7dhc8g" path="res://gameSprites/Player/Dash.png" id="1_q0b5b"]
+[ext_resource type="Script" uid="uid://c4vyqjl1r2yib" path="res://miscellaneousScenes/ghost.gd" id="2_s882u"]
+[ext_resource type="AudioStream" uid="uid://dq4pms5vapwo3" path="res://SFX/dash[hm].wav" id="3_vrvrf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpang"]
+atlas = ExtResource("1_q0b5b")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uu2od"]
+atlas = ExtResource("1_q0b5b")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jldqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpang")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uu2od")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Ghost" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jldqd")
+autoplay = "default"
+frame_progress = 0.391526
+script = ExtResource("2_s882u")
+
+[node name="Dash[hm]" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vrvrf")

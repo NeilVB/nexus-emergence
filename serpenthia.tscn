@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://og3jissxqe3q"]
+
+[ext_resource type="Texture2D" uid="uid://11ji33acv6vx" path="res://gameSprites/Serpenthia/Serpenthia-Sheet.png" id="1_wsbqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llamr"]
+atlas = ExtResource("1_wsbqh")
+region = Rect2(0, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fpds"]
+atlas = ExtResource("1_wsbqh")
+region = Rect2(272, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsivw"]
+atlas = ExtResource("1_wsbqh")
+region = Rect2(544, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_326q8"]
+atlas = ExtResource("1_wsbqh")
+region = Rect2(816, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3bsw"]
+atlas = ExtResource("1_wsbqh")
+region = Rect2(1088, 0, 272, 272)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reeot"]
+atlas = ExtResource("1_wsbqh")
+region = Rect2(1360, 0, 272, 272)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0ux5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llamr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fpds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsivw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_326q8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3bsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_reeot")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_be0se"]
+radius = 45.0
+height = 224.0
+
+[node name="Serpenthia" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q0ux5")
+autoplay = "default"
+frame_progress = 0.757847
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(26, 29)
+shape = SubResource("CapsuleShape2D_be0se")

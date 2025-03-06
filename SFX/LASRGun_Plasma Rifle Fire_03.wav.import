@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btvg5srl60so"
+path="res://.godot/imported/LASRGun_Plasma Rifle Fire_03.wav-d5ccb55b1b45b6afe4f3d60b2b26c254.sample"
+
+[deps]
+
+source_file="res://SFX/LASRGun_Plasma Rifle Fire_03.wav"
+dest_files=["res://.godot/imported/LASRGun_Plasma Rifle Fire_03.wav-d5ccb55b1b45b6afe4f3d60b2b26c254.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

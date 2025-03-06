@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://cutb5l3y3xkdt"]
+
+[ext_resource type="Texture2D" uid="uid://fyh8gmdr3cxu" path="res://LevelSprites/Turret/turretBullet.png" id="1_oxkxu"]
+[ext_resource type="Script" uid="uid://ohvqm7asb8gi" path="res://Scripts/bullet.gd" id="1_w7k2d"]
+[ext_resource type="AudioStream" uid="uid://8o6e1vw68pwx" path="res://SFX/shootSfx.wav" id="3_omn4i"]
+[ext_resource type="Texture2D" uid="uid://cj0u3y1bgctv" path="res://LevelSprites/Turret/FantasyworldExplosionpack3/1.png" id="3_uqlbm"]
+[ext_resource type="Texture2D" uid="uid://bjrc0adp4sdw7" path="res://LevelSprites/Turret/FantasyworldExplosionpack3/2.png" id="4_30bxq"]
+[ext_resource type="AudioStream" uid="uid://btvg5srl60so" path="res://SFX/LASRGun_Plasma Rifle Fire_03.wav" id="4_ccgsa"]
+[ext_resource type="Texture2D" uid="uid://dmllp3yk382lt" path="res://LevelSprites/Turret/FantasyworldExplosionpack3/3.png" id="5_axsyi"]
+[ext_resource type="Texture2D" uid="uid://dhybpfly1dwtg" path="res://LevelSprites/Turret/FantasyworldExplosionpack3/4.png" id="6_qxv3e"]
+[ext_resource type="Texture2D" uid="uid://ck2tsqsokiky5" path="res://LevelSprites/Turret/FantasyworldExplosionpack3/5.png" id="7_wgb7l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xi23"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v8qh"]
+atlas = ExtResource("1_oxkxu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_065cx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v8qh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uqlbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_30bxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_axsyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qxv3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wgb7l")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 9.0
+}]
+
+[node name="Bullet" type="Area2D"]
+collision_mask = 5
+script = ExtResource("1_w7k2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3xi23")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_065cx")
+animation = &"impact"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_oxkxu")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="ShootSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_omn4i")
+volume_db = -3.333
+
+[node name="LasrGunPlasmaRifleFire03" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ccgsa")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

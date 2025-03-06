@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://bero5jg0ohtxw"]
+
+[ext_resource type="Script" uid="uid://dceunce2s2ksh" path="res://Scripts/score_ui.gd" id="1_1un1h"]
+[ext_resource type="FontFile" uid="uid://o5cns8h4pgx" path="res://UI Elements/Fonts/m3x6.ttf" id="2_8ni66"]
+[ext_resource type="Texture2D" uid="uid://c23tkt5dxqtli" path="res://HUD/Score.png" id="3_6sjhp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_na7b4"]
+line_spacing = 0.001
+font = ExtResource("2_8ni66")
+font_size = 32
+outline_size = 3
+outline_color = Color(0.0313726, 0.0941176, 0.105882, 1)
+shadow_size = 0
+shadow_color = Color(0.010765, 0.046298, 0.0551162, 0.494118)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5qfy"]
+line_spacing = 0.001
+font = ExtResource("2_8ni66")
+font_size = 32
+font_color = Color(0.223294, 1, 0.673629, 1)
+outline_size = 4
+outline_color = Color(0.0313726, 0.0941176, 0.105882, 1)
+shadow_size = 0
+shadow_color = Color(0.010765, 0.046298, 0.0551162, 0.494118)
+
+[node name="ScoreUI" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -38.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.944493)
+script = ExtResource("1_1un1h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 487.0
+offset_top = 335.0
+offset_right = 642.0
+offset_bottom = 375.0
+texture = ExtResource("3_6sjhp")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 5
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -144.0
+offset_top = -30.0
+offset_right = -21.0
+offset_bottom = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1.03998, 1.03998)
+text = "0
+"
+label_settings = SubResource("LabelSettings_na7b4")
+horizontal_alignment = 2
+
+[node name="BUILD" type="Label" parent="."]
+visible = false
+texture_filter = 5
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -366.119
+offset_bottom = -336.119
+grow_horizontal = 0
+grow_vertical = 0
+text = "NEXUS EMERGENCE BUILD [1-11-25]"
+label_settings = SubResource("LabelSettings_u5qfy")
+horizontal_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
